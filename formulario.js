@@ -1,5 +1,5 @@
 const form = document.getElementById('autorizacao-form');
-const mesagem = document.getElementById('mensagem');
+const mensagem = document.getElementById('mensagem');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -8,12 +8,8 @@ form.addEventListener('submit', (e) => {
     const dataNascimento = document.getElementById('data-nascimento').value;
     const contatoEmergencia = document.getElementById('contato-emergencia').value;
     const condicoesMedicas = document.getElementById('condicoes-medicas').value;
-    const medicamentos = document.getElementById('medicamentos').value;
-    const assinatura = document.getElementById('assinatura').value;
 
-    // Enviar os dados para o servidor ou armazená-los localmente
-    // Por exemplo, usando AJAX ou fetch API
-    fetch('/enviar-autorizacao', {
+    fetch('https://script.google.com/macros/s/AKfycbw4POK7z7vQgk5BDV3M__UZnStnzXsKptSpaIn7X-U8oc4QHxP2GEtqhL6jPBWZJbjp9A/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,7 +29,7 @@ form.addEventListener('submit', (e) => {
         form.reset();
     })
     .catch((error) => {
+        console.error(error);
         mensagem.textContent = 'Erro ao enviar autorização';
     });
-
 });
