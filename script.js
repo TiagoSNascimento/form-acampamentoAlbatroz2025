@@ -11,6 +11,7 @@ form.addEventListener('submit', (e) => {
 
     fetch('https://script.google.com/macros/s/AKfycbw4POK7z7vQgk5BDV3M__UZnStnzXsKptSpaIn7X-U8oc4QHxP2GEtqhL6jPBWZJbjp9A/exec', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
