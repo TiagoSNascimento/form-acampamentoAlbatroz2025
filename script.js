@@ -8,6 +8,8 @@ form.addEventListener('submit', (e) => {
     const dataNascimento = document.getElementById('data-nascimento').value;
     const contatoEmergencia = document.getElementById('contato-emergencia').value;
     const condicoesMedicas = document.getElementById('condicoes-medicas').value;
+    const medicamentos = document.getElementById('medicamentos').value;
+    const assinatura = document.getElementById('assinatura').value;
 
     fetch('https://script.google.com/macros/s/AKfycbw4POK7z7vQgk5BDV3M__UZnStnzXsKptSpaIn7X-U8oc4QHxP2GEtqhL6jPBWZJbjp9A/exec', {
         method: 'POST',
@@ -24,8 +26,7 @@ form.addEventListener('submit', (e) => {
             assinatura
         })
     })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(() => {
         mensagem.textContent = 'Autorização enviada com sucesso!';
         form.reset();
     })
